@@ -14,7 +14,7 @@ while(cap.isOpened()):
     diff = cv2.absdiff(frame_prev,frame_cur)
     mean_diff = np.mean(diff)
     if mean_diff > 3:
-        cv2.imwrite('csv/ss'+str(i)+'.png',frame_cur)
+        cv2.imwrite('original/ss'+str(i)+'.png',frame_cur)
         frame_prev = frame_cur
     i+=1
 
