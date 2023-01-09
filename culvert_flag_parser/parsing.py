@@ -62,16 +62,15 @@ errors = []
 for x in range(0, len(array)):
     array[x] = array[x].split()
     ign = array[x][0]
-    match = process.extractOne(ign, list_of_igns)[0]
-    # Put IGNS that couldn't be matched into a list for debugging/manual solving
-    if len(match) == 0:
-        errors.append(match)
+    match, percent = process.extractOne(ign, list_of_igns)
     # Makes sure there are no dupes, in case multiple screenshots were taken
-    # of the same set of memebrs
-    if match not in seen_igns:
+    # of the same set of memebrs and IGNs match by 70%, if not then send to errors
+    if match not in seen_igns and percent > 70:
         # Appends matched IGNs in format IGN Culvert Flag
         res.append([match, array[x][-2], array[x][-1]])
         seen_igns.append(match)
+    else:    # Put IGNS that couldn't be matched into a list for debugging/manual solving
+        errors.append(array[x])
 
 # Write list of results to results.csv
 results = ""
