@@ -6,7 +6,7 @@ Extracts guild's IGNs, Culvert, and Flag Race numbers from video of member parti
 Install Tesseract OCR https://github.com/tesseract-ocr/tessdoc#binaries
 
 ### 2. Recording
-Record a scrolling cropped video from top of the list and bottom by scrolling. Make sure the cursor doesn't show up and there are no headers or extra space, like shown below, and save it in culver-flag-parser folder.
+Record a scrolling cropped video from top of the list and bottom by scrolling. Make sure the cursor doesn't show up and there are no headers or extra space, like shown below, and save it in culver-flag-parser folder. If the video isn't in HD there is a higher chance mistakes occur in numbers.
 
 ![](https://github.com/j3li/maplestory-culvert-flag-parser/blob/main/recording%20example.gif)
 
