@@ -17,7 +17,7 @@ Run `screenshot.py` to generate the screenshots of every page in the video.
 
 Run `parsing.py`. This will extract all the text from the images.
 
-`log.txt` will have the unfiltered results of everything that gets parsed. `results.csv` will have results filtered to only have `IGN | Culvert | Flag Race`.
+`log.txt` will have the unfiltered results of everything that gets parsed. `results.csv` will have results filtered to only have **IGN | Culvert | Flag Race**.
 
 `errors.csv` will have IGNs that could not be matched for debugging and manual solving.
 
