@@ -23,7 +23,7 @@ list_of_igns = igns.read()
 list_of_igns = list_of_igns.splitlines()
 # Iterating through every screenshot that was taken and performing
 # image processing to make the images easier to parse
-for x in glob.glob("csv/*.png"):
+for x in glob.glob("original/*.png"):
     img = cv2.imread(x)
     # Resizing and making the images bigger
     img = cv2.resize(img, None, fx=5, fy=5)
