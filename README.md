@@ -1,5 +1,5 @@
 # maplestory-culvert-flag-score-extractor
-Extracts guild's IGNs, Culvert, and Flag Race numbers from video of member participation status by using Tesseract OCR and Python
+Extracts guild's IGNs, Culvert, and Flag Race numbers from video of member participation status by using Tesseract OCR and Python 
 
 ## STEPS
 ### 1. TESSERACT OCR
