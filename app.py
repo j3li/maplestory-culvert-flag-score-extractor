@@ -135,4 +135,3 @@ def upload_image():
 def land():
     return render_template('main.html')
 
-app.run(port=5000)
