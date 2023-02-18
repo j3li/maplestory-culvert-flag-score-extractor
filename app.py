@@ -147,4 +147,8 @@ def upload_image():
 def land():
     return render_template('main.html')
 
+@app.route("/done", methods=['GET'])
+def done():
+    return render_template('done.html')
+    
 app.run(port=5000)
