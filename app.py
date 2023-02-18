@@ -94,6 +94,7 @@ def upload_image():
     seen_igns = []
     res = []
     errors = []
+    dupes = []
 
     # Extracts IGN, Culvert, and Flag Race numbers and compares parsed
     # IGN to the list of IGNs in the guild and finds the most similar match
@@ -102,11 +103,14 @@ def upload_image():
         ign = array[x][0]
         match, percent = process.extractOne(ign, list_of_igns)
         # Makes sure there are no dupes, in case multiple screenshots were taken
-        # of the same set of memebrs and IGNs match by 70%, if not then send to errors
+        # of the same set of members and IGNs match by 70%, if not then send to errors
         if match not in seen_igns and percent > 70:
             # Appends matched IGNs in format IGN Culvert Flag
             res.append([match, array[x][-2], array[x][-1]])
             seen_igns.append(match)
+        # Duped IGNS
+        elif match in seen_igns:
+            dupes.append(array[x])
         else:    # Put IGNS that couldn't be matched into a list for debugging/manual solving
             errors.append(array[x])
 
@@ -118,7 +122,7 @@ def upload_image():
     results = results.replace('.', ',')
     results = results.replace('1]', '0')
     results = results.replace('1}', '0')
-    with open('templates/results.csv', "w") as f:
+    with open('results.csv', "w") as f:
         f.write(results)
 
     # Write list of errors to errors.csv
@@ -126,10 +130,18 @@ def upload_image():
     for x in errors:
         errors_s+= " ".join(x)
         errors_s+= "\n"
-    with open('templates/errors.csv', 'w') as f:
+    with open('errors.csv', 'w') as f:
         f.write(errors_s)
 
-    return render_template('results.csv')
+    # Write list of dupes to dupes.csv
+    dupes_s = ""
+    for x in dupes:
+        dupes_s+= " ".join(x)
+        dupes_s+= "\n"
+    with open('dupes.csv', 'w') as f:
+        f.write(dupes_s)
+
+    return render_template('done.html')
 
 @app.route("/", methods=['GET'])
 def land():
