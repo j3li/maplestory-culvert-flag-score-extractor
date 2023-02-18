@@ -1,4 +1,36 @@
 <!doctype html>
-<title> Finished </title>
-<h2>Check your folder for results.csv and errors.csv</h2>
+<head>
+    <style>
+    html, body {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      }
+    body, div, h1, form, input, p, ul { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #666;
+      }
+      h1 {
+        font-size: 30px;
+      }
 
+
+    </style>
+</head>
+<title> Finished </title>
+<body>
+    <div>
+    <h1>Check your folder for <strong>results.csv</strong> and <strong>errors.csv</strong>!</h1>
+    <br>
+    <br>
+    <ul>
+        <li><strong>results.csv</strong> will have entries that were successfully extracted and matched.</li> 
+        <li><strong>errors.csv</strong> will have all dupes or entries that could not be matched.</li>
+        <li><strong>log.tx</strong> will have everything that was extracted.</li>
+    </ul>
+</div>
+</body>

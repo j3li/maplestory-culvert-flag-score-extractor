@@ -145,10 +145,10 @@
     <h1>Upload the video</h1>
 
     <form method="post" action="/" enctype="multipart/form-data" id="myform">
-    <label for="files">Select IGNs file:</label>
-    <input type="file" id="ign" name="ign" class="but" required><br><br>
-    <label for="files">Select recording:</label>
-    <input type="file" id="vid" name="vid" class="but" required><br><br>
+    <label for="files">Select IGNs file (.txt):</label>
+    <input type="file" id="ign" name="ign" class="but" accept=".txt" required><br><br>
+    <label for="files">Select recording (.mp4):</label>
+    <input type="file" id="vid" name="vid" class="but" accept=".mp4" required><br><br>
     <input type="submit" class="but">
     </form>
 </div>
