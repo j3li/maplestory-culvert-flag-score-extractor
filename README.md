@@ -24,7 +24,9 @@ Record a scrolling cropped `.mp4` video from top of the list and bottom by scrol
 ### 3. Running the Code
 Navigate to **maplestory-culvert-flag-score-extractor** and run `python app.py` in terminal and open the website at `http://127.0.0.1:5000`. Upload the IGNs list and the recording.
 
-`log.txt` will have the unfiltered results of everything extracted. `results.csv` will have results filtered to only have **IGN | Culvert | Flag Race**.
+`log.txt` will have the unfiltered results of everything extracted.  
+
+`results.csv` will have results filtered to only have **IGN | Culvert | Flag Race**.
 
 `errors.csv` will have IGNs that could not be matched for debugging and manual solving.
 
